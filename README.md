@@ -107,7 +107,7 @@ We have four teams. Find your team below and focus on your deliverables.
 1.  **Setup:** One person from the team should **fork** this repository and **invite** all other team members as collaborators (under Settings > Collaborators).
 2.  **Clone:** Each team member should then clone the forked repository to their computer:
     ```bash
-    git clone https://github.com/your-username/webtoolkit-project.git
+    git clone https://github.com/LimaJuni/webtoolkit-project
     ```
 3.  **Create a Branch:** It's good practice to create a new branch for your feature:
     ```bash
