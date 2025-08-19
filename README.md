@@ -81,23 +81,23 @@ We have four teams. Find your team below and focus on your deliverables.
 ---
 
 ## 🗂️ Project File Structure
-webtoolkit-project/
-├── index.html          # Homepage (Team 1)
-├── calculator.html     # Calculator App (Team 2)
-├── phonebook.html      # Phonebook App (Team 3)
-├── about.html          # About Us page (Team 1)
-├── css/
-│   └── style.css       # All styles for the site (All Teams)
-├── js/
-│   ├── main.js         # Common JS (e.g., nav highlight) (Team 4)
-│   ├── calculator.js   # Calculator logic (Team 2)
-│   └── phonebook.js    # Phonebook logic (Team 3)
-└── images/
-    ├── logo.png        # Website logo
-    └── slideshow/      # Folder for homepage images
-        ├── image1.jpg
-        ├── image2.jpg
-        └── image3.jpg
+      webtoolkit-project/
+      ├── index.html          # Homepage (Team 1)
+      ├── calculator.html     # Calculator App (Team 2)
+      ├── phonebook.html      # Phonebook App (Team 3)
+      ├── about.html          # About Us page (Team 1)
+      ├── css/
+      │   └── style.css       # All styles for the site (All Teams)
+      ├── js/
+      │   ├── main.js         # Common JS (e.g., nav highlight) (Team 4)
+      │   ├── calculator.js   # Calculator logic (Team 2)
+      │   └── phonebook.js    # Phonebook logic (Team 3)
+      └── images/
+          ├── logo.png        # Website logo
+          └── slideshow/      # Folder for homepage images
+              ├── image1.jpg
+              ├── image2.jpg
+              └── image3.jpg
 
 
 ---
