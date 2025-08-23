@@ -273,4 +273,4 @@ html {
 
 [data-theme="dark"] .interactive-card::before {
   background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
-} 
+}

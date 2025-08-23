@@ -1,0 +1,209 @@
+/* Smooth Page Transitions */
+
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-neutral-0);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(100%);
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.transition-content {
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.page-transition-overlay.active .transition-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.transition-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-700));
+  border-radius: var(--radius-full);
+  animation: loading-bar 1s ease-in-out infinite;
+}
+
+@keyframes loading-bar {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.loader-text {
+  font-size: var(--text-sm);
+  color: var(--color-neutral-600);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Page content transition states */
+.page-transitioning main {
+  opacity: 0.7;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Alternative transition styles */
+.page-transition-overlay.slide-up {
+  transform: translateY(100%);
+}
+
+.page-transition-overlay.slide-up.active {
+  transform: translateY(0);
+}
+
+.page-transition-overlay.slide-down {
+  transform: translateY(-100%);
+}
+
+.page-transition-overlay.slide-down.active {
+  transform: translateY(0);
+}
+
+.page-transition-overlay.slide-left {
+  transform: translateX(100%);
+}
+
+.page-transition-overlay.slide-left.active {
+  transform: translateX(0);
+}
+
+.page-transition-overlay.slide-right {
+  transform: translateX(-100%);
+}
+
+.page-transition-overlay.slide-right.active {
+  transform: translateX(0);
+}
+
+.page-transition-overlay.fade {
+  transform: none;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.page-transition-overlay.scale {
+  transform: scale(0.8);
+}
+
+.page-transition-overlay.scale.active {
+  transform: scale(1);
+}
+
+/* Curtain effect */
+.page-transition-overlay.curtain {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+}
+
+.page-transition-overlay.curtain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-neutral-0);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-transition-overlay.curtain.active::before {
+  left: 0;
+}
+
+/* Ripple effect */
+.page-transition-overlay.ripple {
+  background: radial-gradient(circle at center, var(--color-primary-600) 0%, var(--color-primary-800) 100%);
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-transition-overlay.ripple.active {
+  clip-path: circle(150% at 50% 50%);
+}
+
+/* Dark mode */
+[data-theme="dark"] .page-transition-overlay {
+  background: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .loader-text {
+  color: var(--color-neutral-400);
+}
+
+[data-theme="dark"] .loader-bar {
+  background: var(--color-neutral-700);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-overlay,
+  .transition-content,
+  .page-transitioning main,
+  .loader-bar::after {
+    transition: none;
+    animation: none;
+  }
+  
+  .page-transition-overlay {
+    transform: none;
+  }
+  
+  .page-transition-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .loader-bar {
+    width: 150px;
+  }
+  
+  .transition-content {
+    padding: var(--space-4);
+  }
+}

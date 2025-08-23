@@ -18,6 +18,12 @@
 @import './advanced-animations.css';
 @import './features-section.css';
 @import './navigation-enhancements.css';
+@import './scroll-animations.css';
+@import './modern-hero.css';
+@import './interactive-cards.css';
+@import './mega-menu.css';
+@import './loading-animations.css';
+@import './testimonials.css';
 
 /* Base layout and container styles */
 .container {

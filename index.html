@@ -87,8 +87,52 @@
     <!-- Main Content -->
     <main id="main-content" class="main-content" role="main">
         <div class="container">
-        <!-- Hero Section with Rank Checker -->
-        <header class="hero-section pt-20 pb-16 text-center">
+        <!-- Modern Hero Section -->
+        <section class="hero-modern">
+            <div class="hero-grid"></div>
+            <div class="hero-shapes">
+                <div class="hero-shape"></div>
+                <div class="hero-shape"></div>
+                <div class="hero-shape"></div>
+            </div>
+            <div class="particle-container" data-particles="15"></div>
+            
+            <div class="hero-content-modern scroll-reveal">
+                <h1 class="hero-title-modern">WebToolKit Enhanced</h1>
+                <p class="hero-subtitle-modern">Experience the future of web development with modern design, interactive features, and seamless performance.</p>
+                
+                <div class="hero-cta-group">
+                    <a href="calculator.html" class="hero-cta-primary">
+                        <span>🧮</span>
+                        Get Started
+                    </a>
+                    <a href="about.html" class="hero-cta-secondary">
+                        <span>ℹ️</span>
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="hero-stats scroll-reveal-stagger">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number counter" data-target="1000">0</span>
+                        <span class="hero-stat-label">Users</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number counter" data-target="50">0</span>
+                        <span class="hero-stat-label">Features</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number counter" data-target="99">0</span>
+                        <span class="hero-stat-label">Uptime %</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">Scroll to explore</div>
+        </section>
+
+        <!-- Original Hero Section with Rank Checker -->
+        <header class="hero-section pt-20 pb-16 text-center" style="display: none;">
             <!-- Floating Particles Background -->
             <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
             <div class="particle" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
@@ -184,38 +228,83 @@
             </div>
         </header>
 
-        <!-- Modern Features Section -->
-        <section class="features-section py-20">
+        <!-- Interactive Cards Section -->
+        <section class="py-20">
             <div class="container">
-                <h2 class="section-title text-center mb-16 reveal">Modern Web Toolkit Features</h2>
+                <h2 class="section-title text-center mb-16 scroll-reveal">Powerful Tools & Features</h2>
                 
-                <div class="interactive-grid stagger-container">
-                    <div class="interactive-card stagger-item">
-                        <div class="feature-icon mb-4">🧮</div>
-                        <h3 class="feature-title">Advanced Calculator</h3>
-                        <p class="feature-description">Modern calculator with history, keyboard support, and beautiful animations.</p>
-                        <a href="calculator.html" class="feature-link modern-btn">Try Calculator</a>
+                <div class="cards-grid">
+                    <div class="card-modern scroll-reveal-stagger">
+                        <div class="card-badge">Popular</div>
+                        <div class="card-icon">🧮</div>
+                        <h3 class="card-title">Advanced Calculator</h3>
+                        <p class="card-description">Modern calculator with history, keyboard support, and beautiful animations. Perfect for complex calculations.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="95"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="calculator.html" class="card-link">Try Calculator</a>
+                        </div>
                     </div>
                     
-                    <div class="interactive-card stagger-item">
-                        <div class="feature-icon mb-4">📞</div>
-                        <h3 class="feature-title">Smart Phonebook</h3>
-                        <p class="feature-description">Enhanced contact management with search, sorting, and bulk operations.</p>
-                        <a href="phonebook.html" class="feature-link modern-btn">View Phonebook</a>
+                    <div class="card-modern scroll-reveal-stagger">
+                        <div class="card-icon">📞</div>
+                        <h3 class="card-title">Smart Phonebook</h3>
+                        <p class="card-description">Enhanced contact management with search, sorting, and bulk operations in a beautiful interface.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="88"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="phonebook.html" class="card-link">Manage Contacts</a>
+                        </div>
                     </div>
                     
-                    <div class="interactive-card stagger-item">
-                        <div class="feature-icon mb-4">🖼️</div>
-                        <h3 class="feature-title">Image Gallery</h3>
-                        <p class="feature-description">Drag & drop image management with modern lightbox and touch support.</p>
-                        <a href="gallery.html" class="feature-link modern-btn">Browse Gallery</a>
+                    <div class="card-modern scroll-reveal-stagger">
+                        <div class="card-icon">🖼️</div>
+                        <h3 class="card-title">Image Gallery</h3>
+                        <p class="card-description">Upload, organize, and view images with drag-and-drop support and responsive gallery layouts.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="92"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="gallery.html" class="card-link">Browse Gallery</a>
+                        </div>
                     </div>
                     
-                    <div class="interactive-card stagger-item">
-                        <div class="feature-icon mb-4">⚡</div>
-                        <h3 class="feature-title">Performance Optimized</h3>
-                        <p class="feature-description">Built with modern web standards, service workers, and lazy loading.</p>
-                        <div class="feature-badge">Fast & Responsive</div>
+                    <div class="card-modern card-gradient scroll-reveal-stagger">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Performance Optimized</h3>
+                        <p class="card-description">Built with modern web standards, service workers, and lazy loading for lightning-fast performance.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="98"></div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-link" style="color: white;">Lightning Fast</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-modern scroll-reveal-stagger">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-title">Modern Design</h3>
+                        <p class="card-description">Figma-inspired design system with consistent spacing, typography, and color schemes.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="100"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="about.html" class="card-link">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-modern scroll-reveal-stagger">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Mobile Ready</h3>
+                        <p class="card-description">Fully responsive design that works perfectly on all devices and screen sizes with touch support.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-percentage="96"></div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link">Test Responsive</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -299,6 +388,125 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="container testimonials-container">
+                <div class="testimonials-header scroll-reveal">
+                    <h2 class="testimonials-title">What Our Users Say</h2>
+                    <p class="testimonials-subtitle">Join thousands of satisfied users who have transformed their workflow with WebToolKit Enhanced</p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card scroll-reveal-stagger">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="testimonial-text">The calculator is incredibly intuitive and the design is absolutely beautiful. It's become my go-to tool for all calculations.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Sarah Johnson" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Sarah Johnson</div>
+                                <div class="author-title">Product Manager</div>
+                                <div class="author-company">TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card scroll-reveal-stagger">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="testimonial-text">The phonebook feature has revolutionized how I manage my contacts. The search functionality is lightning fast!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Mike Chen" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Mike Chen</div>
+                                <div class="author-title">Sales Director</div>
+                                <div class="author-company">StartupXYZ</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card testimonial-featured scroll-reveal-stagger">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="testimonial-text">WebToolKit Enhanced has exceeded all my expectations. The modern design and smooth animations make every interaction a pleasure. It's not just functional, it's beautiful.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="David Rodriguez" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">David Rodriguez</div>
+                                <div class="author-title">Lead Developer</div>
+                                <div class="author-company">InnovateLab</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card scroll-reveal-stagger">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <p class="testimonial-text">The image gallery is fantastic! Drag and drop functionality works flawlessly, and the lightbox is so smooth.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Emily Davis" class="author-avatar">
+                            <div class="author-info">
+                                <div class="author-name">Emily Davis</div>
+                                <div class="author-title">UX Designer</div>
+                                <div class="author-company">DesignStudio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonials-stats scroll-reveal">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="5000">0</span>
+                        <span class="stat-label">Happy Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="98">0</span>
+                        <span class="stat-label">Satisfaction Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="24">0</span>
+                        <span class="stat-label">Support Hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="99">0</span>
+                        <span class="stat-label">Uptime %</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Interactive Demo Section -->
         <section class="demo-section mb-20" data-animate="fade-up">
             <div class="demo-container">
@@ -376,5 +584,7 @@
     <script type="module" src="js/app-polish.js"></script>
     <script type="module" src="js/homepage.js"></script>
     <script type="module" src="js/rank-system.js"></script>
+    <script type="module" src="js/scroll-animations.js"></script>
+    <script type="module" src="js/page-loader.js"></script>
 </body>
 </html>
