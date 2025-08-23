@@ -1,0 +1,113 @@
+/* Page Background Images */
+.main-content {
+  position: relative;
+}
+
+.main-content::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Calculator Page Background */
+body:has([href*="calculator"]) .main-content::before,
+.calculator-page .main-content::before {
+  background: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1920&h=1080&fit=crop') center/cover;
+}
+
+/* Phonebook Page Background */
+body:has([href*="phonebook"]) .main-content::before,
+.phonebook-page .main-content::before {
+  background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&h=1080&fit=crop') center/cover;
+}
+
+/* Gallery Page Background */
+body:has([href*="gallery"]) .main-content::before,
+.gallery-page .main-content::before {
+  background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&h=1080&fit=crop') center/cover;
+}
+
+/* About Page Background */
+body:has([href*="about"]) .main-content::before,
+.about-page .main-content::before {
+  background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop') center/cover;
+}
+
+/* Feature Cards with Images */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  border-radius: var(--radius-lg);
+}
+
+.feature-card:nth-child(1)::after {
+  background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=200&fit=crop');
+}
+
+.feature-card:nth-child(2)::after {
+  background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200&h=200&fit=crop');
+}
+
+.feature-card:nth-child(3)::after {
+  background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&h=200&fit=crop');
+}
+
+/* Hero Section Enhancement */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&h=1080&fit=crop') center/cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+/* Add subtle patterns */
+.slideshow-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .main-content::before {
+    opacity: 0.03;
+  }
+  
+  .hero-section::before {
+    opacity: 0.05;
+  }
+}

@@ -1,11 +1,17 @@
-/* Rank Checker System */
+/* Rank Checker System - Compact */
 .rank-checker {
   position: relative;
   z-index: 10;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-neutral-0));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
 }
 
 .rank-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   opacity: 0.8;
   animation: float 3s ease-in-out infinite;
 }
@@ -76,7 +82,7 @@
 }
 
 .player-welcome {
-  font-size: var(--text-4xl);
+  font-size: var(--text-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-900);
 }
@@ -131,7 +137,7 @@
 }
 
 .quest-title {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-neutral-900);
 }

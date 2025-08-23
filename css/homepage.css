@@ -108,6 +108,14 @@
   justify-content: center;
   background: linear-gradient(135deg, var(--color-primary-100), var(--color-primary-200));
   border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
 }
 
 .placeholder-image {
@@ -357,6 +365,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.demo-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+}
+
+.demo-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .demo-mockup {
