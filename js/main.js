@@ -149,8 +149,8 @@ export class DesignSystem {
   }
 
   setupTheme() {
-    // Theme management will be implemented in later tasks
-    console.log('Design system initialized');
+    // Theme management
+    this.initThemeToggle();
   }
 
   setupAnimations() {
@@ -175,6 +175,38 @@ export class DesignSystem {
     document.addEventListener('mousedown', () => {
       document.body.classList.remove('keyboard-navigation');
     });
+  }
+
+  initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle?.querySelector('.theme-icon');
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('webtoolkit_theme') || 'light';
+    this.setTheme(savedTheme);
+    
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        this.setTheme(newTheme);
+      });
+    }
+  }
+
+  setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('webtoolkit_theme', theme);
+    
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+      themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+    }
+    
+    // Dispatch theme change event for gamification
+    document.dispatchEvent(new CustomEvent('themeChanged', { 
+      detail: { theme } 
+    }));
   }
 }
 

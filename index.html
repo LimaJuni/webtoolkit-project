@@ -26,6 +26,11 @@
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+    </button>
+    
     <!-- Main Navigation -->
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="container">
@@ -129,6 +134,189 @@
             </div>
             
             <div class="scroll-indicator">Scroll to explore</div>
+        </section>
+
+        <!-- Gamification Section -->
+        <section class="gamification-section py-20">
+            <div class="container">
+                <div class="gamification-header text-center mb-16 scroll-reveal">
+                    <h2 class="section-title mb-4">Level Up Your Experience</h2>
+                    <p class="section-subtitle">Complete tasks, earn XP, and unlock achievements</p>
+                </div>
+                
+                <div class="game-dashboard">
+                    <!-- Player Stats -->
+                    <div class="player-stats-card scroll-reveal-left">
+                        <div class="player-avatar">
+                            <div class="avatar-ring">
+                                <div class="avatar-image">👤</div>
+                                <div class="level-badge" id="player-level-badge">1</div>
+                            </div>
+                        </div>
+                        <div class="player-info">
+                            <h3 class="player-name" id="player-name-display">Guest User</h3>
+                            <div class="player-title" id="player-title">Beginner Explorer</div>
+                            <div class="xp-bar">
+                                <div class="xp-fill" id="xp-fill" style="width: 0%"></div>
+                                <span class="xp-text" id="xp-text">0 / 100 XP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="quick-actions scroll-reveal-right">
+                        <div class="action-card" data-action="calculator">
+                            <div class="action-icon">🧮</div>
+                            <div class="action-info">
+                                <h4>Use Calculator</h4>
+                                <p>+5 XP per calculation</p>
+                            </div>
+                            <div class="action-progress">
+                                <div class="progress-ring">
+                                    <div class="progress-value" id="calc-progress">0/10</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-card" data-action="phonebook">
+                            <div class="action-icon">📞</div>
+                            <div class="action-info">
+                                <h4>Add Contact</h4>
+                                <p>+10 XP per contact</p>
+                            </div>
+                            <div class="action-progress">
+                                <div class="progress-ring">
+                                    <div class="progress-value" id="contact-progress">0/5</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="action-card" data-action="gallery">
+                            <div class="action-icon">🖼️</div>
+                            <div class="action-info">
+                                <h4>Upload Image</h4>
+                                <p>+15 XP per image</p>
+                            </div>
+                            <div class="action-progress">
+                                <div class="progress-ring">
+                                    <div class="progress-value" id="gallery-progress">0/3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievements -->
+                <div class="achievements-section mt-16 scroll-reveal">
+                    <h3 class="achievements-title mb-8">🏆 Achievements</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card locked" id="achievement-first-calc">
+                            <div class="achievement-icon">🧮</div>
+                            <div class="achievement-info">
+                                <h4>First Calculation</h4>
+                                <p>Complete your first calculation</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                        
+                        <div class="achievement-card locked" id="achievement-contact-master">
+                            <div class="achievement-icon">📞</div>
+                            <div class="achievement-info">
+                                <h4>Contact Master</h4>
+                                <p>Add 10 contacts to phonebook</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                        
+                        <div class="achievement-card locked" id="achievement-gallery-curator">
+                            <div class="achievement-icon">🖼️</div>
+                            <div class="achievement-info">
+                                <h4>Gallery Curator</h4>
+                                <p>Upload 5 images to gallery</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                        
+                        <div class="achievement-card locked" id="achievement-power-user">
+                            <div class="achievement-icon">⚡</div>
+                            <div class="achievement-info">
+                                <h4>Power User</h4>
+                                <p>Reach level 5</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                        
+                        <div class="achievement-card locked" id="achievement-night-owl">
+                            <div class="achievement-icon">🌙</div>
+                            <div class="achievement-info">
+                                <h4>Night Owl</h4>
+                                <p>Use dark theme for 1 hour</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                        
+                        <div class="achievement-card locked" id="achievement-explorer">
+                            <div class="achievement-icon">🗺️</div>
+                            <div class="achievement-info">
+                                <h4>Explorer</h4>
+                                <p>Visit all pages</p>
+                            </div>
+                            <div class="achievement-status">🔒</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Daily Challenges -->
+                <div class="daily-challenges mt-16 scroll-reveal">
+                    <h3 class="challenges-title mb-8">📅 Daily Challenges</h3>
+                    <div class="challenges-grid">
+                        <div class="challenge-card" id="challenge-calculations">
+                            <div class="challenge-icon">🧮</div>
+                            <div class="challenge-info">
+                                <h4>Math Wizard</h4>
+                                <p>Perform 20 calculations</p>
+                                <div class="challenge-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-percentage="0" id="calc-challenge-progress"></div>
+                                    </div>
+                                    <span class="progress-text" id="calc-challenge-text">0/20</span>
+                                </div>
+                            </div>
+                            <div class="challenge-reward">+50 XP</div>
+                        </div>
+                        
+                        <div class="challenge-card" id="challenge-social">
+                            <div class="challenge-icon">📞</div>
+                            <div class="challenge-info">
+                                <h4>Social Butterfly</h4>
+                                <p>Add 5 new contacts</p>
+                                <div class="challenge-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-percentage="0" id="social-challenge-progress"></div>
+                                    </div>
+                                    <span class="progress-text" id="social-challenge-text">0/5</span>
+                                </div>
+                            </div>
+                            <div class="challenge-reward">+75 XP</div>
+                        </div>
+                        
+                        <div class="challenge-card" id="challenge-creative">
+                            <div class="challenge-icon">🎨</div>
+                            <div class="challenge-info">
+                                <h4>Creative Soul</h4>
+                                <p>Upload 3 images</p>
+                                <div class="challenge-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" data-percentage="0" id="creative-challenge-progress"></div>
+                                    </div>
+                                    <span class="progress-text" id="creative-challenge-text">0/3</span>
+                                </div>
+                            </div>
+                            <div class="challenge-reward">+100 XP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Original Hero Section with Rank Checker -->
@@ -586,6 +774,8 @@
     <script type="module" src="js/rank-system.js?v=1.0.1"></script>
     <script type="module" src="js/scroll-animations.js?v=1.0.1"></script>
     <script type="module" src="js/page-loader.js?v=1.0.1"></script>
+    <script type="module" src="js/gamification-system.js?v=1.0.1"></script>
+    <script type="module" src="js/demo-integration.js?v=1.0.1"></script>
     <script src="js/cache-manager.js?v=1.0.1"></script>
 </body>
 </html>

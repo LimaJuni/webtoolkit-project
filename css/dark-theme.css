@@ -1,65 +1,343 @@
-/* Dark Theme */
+/* Enhanced Dark Theme */
 [data-theme="dark"] {
-  --color-neutral-0: #1a1a1a;
-  --color-neutral-50: #262626;
-  --color-neutral-100: #404040;
-  --color-neutral-200: #525252;
-  --color-neutral-300: #737373;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #d4d4d4;
-  --color-neutral-600: #e5e5e5;
-  --color-neutral-700: #f5f5f5;
-  --color-neutral-800: #fafafa;
+  --color-neutral-0: #0a0a0a;
+  --color-neutral-50: #1a1a1a;
+  --color-neutral-100: #262626;
+  --color-neutral-200: #404040;
+  --color-neutral-300: #525252;
+  --color-neutral-400: #737373;
+  --color-neutral-500: #a3a3a3;
+  --color-neutral-600: #d4d4d4;
+  --color-neutral-700: #e5e5e5;
+  --color-neutral-800: #f5f5f5;
   --color-neutral-900: #ffffff;
+  --color-neutral-950: #ffffff;
 }
 
+/* Base dark theme styles */
 [data-theme="dark"] body {
   background-color: var(--color-neutral-0);
   color: var(--color-neutral-900);
 }
 
+/* Navigation dark theme */
 [data-theme="dark"] .main-nav {
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(10, 10, 10, 0.95);
   border-bottom-color: var(--color-neutral-200);
+  backdrop-filter: blur(20px);
 }
 
-[data-theme="dark"] .calculator,
-[data-theme="dark"] .contact-card,
-[data-theme="dark"] .about-content,
-[data-theme="dark"] .tech-card {
-  background: var(--color-neutral-50);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .calculator-display {
-  background: var(--color-neutral-100);
-}
-
-[data-theme="dark"] .btn-number {
-  background: var(--color-neutral-200);
+[data-theme="dark"] .brand-text,
+[data-theme="dark"] .brand-link {
   color: var(--color-neutral-900);
 }
 
+[data-theme="dark"] .nav-link {
+  color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--color-primary-400);
+  background-color: var(--color-neutral-100);
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: var(--color-primary-400);
+  background-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .mobile-menu-btn {
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-700);
+}
+
+[data-theme="dark"] .mobile-menu-btn:hover {
+  background: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .hamburger-line {
+  background-color: var(--color-neutral-700);
+}
+
+[data-theme="dark"] .nav-menu {
+  background: var(--color-neutral-50);
+  border-top-color: var(--color-neutral-200);
+}
+
+/* Hero section dark theme */
+[data-theme="dark"] .hero-modern {
+  background: linear-gradient(135deg, var(--color-neutral-0) 0%, var(--color-neutral-50) 100%);
+}
+
+[data-theme="dark"] .hero-grid {
+  background-image: 
+    linear-gradient(var(--color-neutral-200) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-neutral-200) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .hero-stats {
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid var(--color-neutral-200);
+}
+
+/* Cards dark theme */
+[data-theme="dark"] .card-modern {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .card-modern::before {
+  background: linear-gradient(135deg, var(--color-neutral-100), var(--color-neutral-200));
+}
+
+[data-theme="dark"] .card-title {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .card-description {
+  color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .card-link {
+  color: var(--color-primary-400);
+}
+
+[data-theme="dark"] .card-link:hover {
+  color: var(--color-primary-300);
+}
+
+/* Interactive cards */
+[data-theme="dark"] .interactive-card {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .interactive-card::before {
+  background: linear-gradient(135deg, var(--color-primary-900), var(--color-primary-800));
+}
+
+/* Testimonials dark theme */
+[data-theme="dark"] .testimonials-section {
+  background: linear-gradient(135deg, var(--color-neutral-0) 0%, var(--color-neutral-50) 100%);
+}
+
+[data-theme="dark"] .testimonials-title {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .testimonials-subtitle {
+  color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .testimonial-card {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .testimonial-text {
+  color: var(--color-neutral-700);
+}
+
+[data-theme="dark"] .author-name {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .author-title,
+[data-theme="dark"] .author-company {
+  color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .testimonials-stats {
+  background: var(--color-neutral-50);
+}
+
+[data-theme="dark"] .stat-number {
+  color: var(--color-primary-400);
+}
+
+[data-theme="dark"] .stat-label {
+  color: var(--color-neutral-600);
+}
+
+/* Forms and inputs */
 [data-theme="dark"] .form-input,
-[data-theme="dark"] .search-input {
+[data-theme="dark"] .search-input,
+[data-theme="dark"] .name-input {
   background: var(--color-neutral-100);
   border-color: var(--color-neutral-300);
   color: var(--color-neutral-900);
 }
 
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .search-input:focus,
+[data-theme="dark"] .name-input:focus {
+  border-color: var(--color-primary-400);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Buttons */
+[data-theme="dark"] .modern-btn {
+  background: var(--color-primary-600);
+  color: white;
+}
+
+[data-theme="dark"] .modern-btn:hover {
+  background: var(--color-primary-500);
+}
+
+[data-theme="dark"] .hero-cta-secondary {
+  border-color: var(--color-primary-400);
+  color: var(--color-primary-400);
+}
+
+[data-theme="dark"] .hero-cta-secondary:hover {
+  background: var(--color-primary-400);
+  color: var(--color-neutral-0);
+}
+
+/* Footer dark theme */
+[data-theme="dark"] .main-footer {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .footer-title {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .footer-subtitle {
+  color: var(--color-neutral-700);
+}
+
+[data-theme="dark"] .footer-text {
+  color: var(--color-neutral-500);
+}
+
+[data-theme="dark"] .footer-link {
+  color: var(--color-neutral-500);
+}
+
+[data-theme="dark"] .footer-link:hover {
+  color: var(--color-primary-400);
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .footer-copyright {
+  color: var(--color-neutral-400);
+}
+
+/* Progress bars */
+[data-theme="dark"] .progress-bar {
+  background: var(--color-neutral-200);
+}
+
+/* Sections */
+[data-theme="dark"] .section-title {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: var(--color-neutral-600);
+}
+
+/* Theme toggle button */
 .theme-toggle {
-  background: none;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary-600);
   border: none;
-  padding: var(--space-3);
-  border-radius: var(--radius-base);
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
   transition: all var(--transition-fast);
+  z-index: 1000;
+  color: white;
 }
 
 .theme-toggle:hover {
+  background: var(--color-primary-700);
+  transform: scale(1.1);
+}
+
+[data-theme="dark"] .theme-toggle {
   background: var(--color-neutral-100);
+  color: var(--color-neutral-800);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--color-neutral-200);
 }
 
 .theme-icon {
   font-size: var(--text-lg);
+  transition: transform var(--transition-fast);
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(180deg);
+}
+
+/* Rank system dark theme */
+[data-theme="dark"] .rank-checker {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .player-profile {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .daily-quests {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+[data-theme="dark"] .quest-item {
+  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-300);
+}
+
+[data-theme="dark"] .rank-badge {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+}
+
+/* Slideshow dark theme */
+[data-theme="dark"] .slideshow-container {
+  background: var(--color-neutral-50);
+}
+
+[data-theme="dark"] .slide-text h3 {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .slide-text p {
+  color: var(--color-neutral-600);
+}
+
+/* Demo section */
+[data-theme="dark"] .demo-section {
+  background: var(--color-neutral-50);
+}
+
+[data-theme="dark"] .demo-title {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .demo-feature-text h4 {
+  color: var(--color-neutral-900);
+}
+
+[data-theme="dark"] .demo-feature-text p {
+  color: var(--color-neutral-600);
 }
