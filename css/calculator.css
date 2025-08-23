@@ -4,7 +4,8 @@
 .calculator-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: var(--space-6);
   padding: var(--space-8) 0;
   min-height: 60vh;
 }
@@ -67,6 +68,38 @@
 .display-primary.calculating {
   color: var(--color-primary-600);
   transform: scale(1.02);
+}
+
+/* Copy Button */
+.copy-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.copy-btn:hover {
+  background: var(--color-primary-500);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.copy-btn.copied {
+  background: var(--color-green-500);
+}
+
+.copy-icon {
+  font-size: 14px;
 }
 
 /* Button Grid */
@@ -361,4 +394,147 @@
 
 .calculator:focus-within .calc-btn[data-key]::after {
   opacity: 0.7;
+}
+
+/* History Panel */
+.history-panel {
+  background: var(--color-neutral-0);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 300px;
+  max-height: 500px;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.history-panel.collapsed {
+  width: 60px;
+  max-height: 60px;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-neutral-200);
+  background: var(--color-neutral-50);
+}
+
+.history-header h3 {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.history-toggle {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--color-neutral-200);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-toggle:hover {
+  background: var(--color-primary-500);
+  transform: scale(1.1);
+}
+
+.toggle-icon {
+  font-size: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.history-panel.collapsed .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.history-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history-empty {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-neutral-500);
+  font-size: var(--text-sm);
+}
+
+.history-list {
+  padding: var(--space-2);
+}
+
+.history-item {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-base);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.history-item:hover {
+  background: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+.history-expression {
+  font-size: var(--text-sm);
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-1);
+}
+
+.history-result {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+}
+
+.history-actions {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+.history-clear {
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-700);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.history-clear:hover {
+  background: var(--color-red-500);
+  color: var(--color-neutral-0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .calculator-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .history-panel {
+    width: 100%;
+    max-width: 350px;
+    margin-top: var(--space-4);
+  }
+  
+  .history-panel.collapsed {
+    width: 100%;
+    max-width: 350px;
+  }
 }

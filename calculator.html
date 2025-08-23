@@ -92,6 +92,9 @@
                     <div class="calculator-display">
                         <div class="display-secondary" id="calc-history" aria-live="polite"></div>
                         <div class="display-primary" id="calc-display" aria-live="assertive">0</div>
+                        <button class="copy-btn" id="copy-result" aria-label="Copy result to clipboard" title="Copy result">
+                            <span class="copy-icon">📋</span>
+                        </button>
                     </div>
                     
                     <!-- Button Grid -->
@@ -124,6 +127,23 @@
                         <button class="calc-btn btn-number btn-zero" data-number="0" aria-label="Zero">0</button>
                         <button class="calc-btn btn-number" data-action="decimal" aria-label="Decimal point">.</button>
                         <button class="calc-btn btn-equals" data-action="equals" aria-label="Equals">=</button>
+                    </div>
+                </div>
+                
+                <!-- History Panel -->
+                <div class="history-panel" id="history-panel">
+                    <div class="history-header">
+                        <h3>History</h3>
+                        <button class="history-toggle" id="history-toggle" aria-label="Toggle history panel">
+                            <span class="toggle-icon">📜</span>
+                        </button>
+                    </div>
+                    <div class="history-content" id="history-content">
+                        <div class="history-empty" id="history-empty">No calculations yet</div>
+                        <div class="history-list" id="history-list"></div>
+                        <div class="history-actions">
+                            <button class="history-clear" id="history-clear">Clear History</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -163,5 +183,7 @@
     <!-- JavaScript -->
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/calculator-ui.js"></script>
+    <script type="module" src="js/calculator.js"></script>
+    <script type="module" src="js/calculator-history.js"></script>
 </body>
 </html>
