@@ -9,6 +9,8 @@
 @import './phonebook.css';
 @import './about.css';
 @import './rank-system.css';
+@import './dark-theme.css';
+@import './gallery.css';
 
 /* Base layout and container styles */
 .container {
