@@ -95,15 +95,51 @@ h6, .h6 {
 /* Special display heading for instructor branding */
 .display-hero {
   font-family: var(--font-family-display);
-  font-size: var(--text-7xl);
+  font-size: clamp(4rem, 8vw + 2rem, 12rem);
   font-weight: var(--font-weight-black);
   line-height: var(--line-height-tight);
   letter-spacing: -0.05em;
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400), var(--color-primary-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease-in-out infinite;
+  text-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+  position: relative;
+  display: inline-block;
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform var(--transition-slow);
+}
+
+.display-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-400));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  opacity: 0.3;
+  z-index: -1;
+  filter: blur(20px);
+  transform: scale(1.1);
+}
+
+.display-hero:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Body text styles */
@@ -212,5 +248,165 @@ pre code {
   
   h2, .h2 {
     font-size: var(--text-2xl);
+  }
+}
+/* Enh
+anced Hero Section Styles */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-neutral-50) 0%, var(--color-primary-50) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, var(--color-primary-100) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, var(--color-primary-50) 0%, transparent 50%);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.instructor-branding {
+  position: relative;
+}
+
+.instructor-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-family-display);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-600);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.instructor-title {
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-semibold);
+}
+
+.instructor-separator {
+  color: var(--color-primary-400);
+  font-weight: var(--font-weight-bold);
+}
+
+.instructor-expertise {
+  color: var(--color-neutral-700);
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-tagline {
+  font-size: var(--text-lg);
+  color: var(--color-neutral-600);
+  line-height: var(--line-height-relaxed);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 4K Display Optimizations */
+@media (min-width: 2560px) {
+  .display-hero {
+    font-size: clamp(8rem, 12vw + 2rem, 16rem);
+    letter-spacing: -0.06em;
+  }
+  
+  .instructor-subtitle {
+    font-size: var(--text-xl);
+    gap: var(--space-4);
+  }
+  
+  .hero-tagline {
+    font-size: var(--text-xl);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .display-hero {
+    background: var(--color-neutral-900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+  }
+  
+  .instructor-title {
+    color: var(--color-neutral-900);
+  }
+  
+  .instructor-expertise {
+    color: var(--color-neutral-800);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .display-hero {
+    animation: none;
+    transform: none;
+  }
+  
+  .display-hero:hover {
+    transform: none;
+  }
+  
+  .display-hero::before {
+    display: none;
+  }
+}
+
+/* Mobile responsiveness for instructor branding */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-12);
+  }
+  
+  .instructor-subtitle {
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+  }
+  
+  .instructor-separator {
+    display: none;
+  }
+  
+  .hero-tagline {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .display-hero {
+    font-size: clamp(3rem, 12vw + 1rem, 6rem);
+    letter-spacing: -0.03em;
+  }
+  
+  .instructor-subtitle {
+    font-size: var(--text-sm);
+  }
+  
+  .hero-tagline {
+    font-size: var(--text-sm);
   }
 }
