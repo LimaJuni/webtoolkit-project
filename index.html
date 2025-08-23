@@ -14,8 +14,15 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Display:wght@600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Modern Enhancement Scripts -->
+    <script src="js/modern-interactions.js" defer></script>
+    <script src="js/app-polish.js" defer></script>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -82,15 +89,20 @@
         <div class="container">
         <!-- Hero Section with Rank Checker -->
         <header class="hero-section pt-20 pb-16 text-center">
+            <!-- Floating Particles Background -->
+            <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
+            <div class="particle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
+            
             <div class="hero-content">
                 <!-- Initial State -->
-                <div class="rank-checker" id="rank-checker">
-                    <div class="rank-icon mb-6">⚔️</div>
-                    <h1 class="display-hero mb-4">Check Your Rank</h1>
+                <div class="rank-checker interactive-card magnetic" id="rank-checker">
+                    <div class="rank-icon mb-6 floating">⚔️</div>
+                    <h1 class="display-hero mb-4 text-reveal" data-text="Check Your Rank">Check Your Rank</h1>
                     <p class="text-lead mb-6">Enter your name to discover your hunter rank</p>
                     <div class="name-input-container">
-                        <input type="text" id="player-name" class="name-input" placeholder="Enter your name..." maxlength="20">
-                        <button id="check-rank-btn" class="rank-btn">Awaken</button>
+                        <input type="text" id="player-name" class="name-input smooth-hover" placeholder="Enter your name..." maxlength="20">
+                        <button id="check-rank-btn" class="rank-btn modern-btn">Awaken</button>
                     </div>
                 </div>
                 
@@ -171,6 +183,43 @@
                 </div>
             </div>
         </header>
+
+        <!-- Modern Features Section -->
+        <section class="features-section py-20">
+            <div class="container">
+                <h2 class="section-title text-center mb-16 reveal">Modern Web Toolkit Features</h2>
+                
+                <div class="interactive-grid stagger-container">
+                    <div class="interactive-card stagger-item">
+                        <div class="feature-icon mb-4">🧮</div>
+                        <h3 class="feature-title">Advanced Calculator</h3>
+                        <p class="feature-description">Modern calculator with history, keyboard support, and beautiful animations.</p>
+                        <a href="calculator.html" class="feature-link modern-btn">Try Calculator</a>
+                    </div>
+                    
+                    <div class="interactive-card stagger-item">
+                        <div class="feature-icon mb-4">📞</div>
+                        <h3 class="feature-title">Smart Phonebook</h3>
+                        <p class="feature-description">Enhanced contact management with search, sorting, and bulk operations.</p>
+                        <a href="phonebook.html" class="feature-link modern-btn">View Phonebook</a>
+                    </div>
+                    
+                    <div class="interactive-card stagger-item">
+                        <div class="feature-icon mb-4">🖼️</div>
+                        <h3 class="feature-title">Image Gallery</h3>
+                        <p class="feature-description">Drag & drop image management with modern lightbox and touch support.</p>
+                        <a href="gallery.html" class="feature-link modern-btn">Browse Gallery</a>
+                    </div>
+                    
+                    <div class="interactive-card stagger-item">
+                        <div class="feature-icon mb-4">⚡</div>
+                        <h3 class="feature-title">Performance Optimized</h3>
+                        <p class="feature-description">Built with modern web standards, service workers, and lazy loading.</p>
+                        <div class="feature-badge">Fast & Responsive</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Image Slideshow Section -->
         <section class="slideshow-section mb-20" data-animate="fade-up">

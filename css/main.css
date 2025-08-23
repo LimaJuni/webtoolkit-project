@@ -14,6 +14,10 @@
 @import './mobile.css';
 @import './dark-theme.css';
 @import './gallery.css';
+@import './modern-enhancements.css';
+@import './advanced-animations.css';
+@import './features-section.css';
+@import './navigation-enhancements.css';
 
 /* Base layout and container styles */
 .container {
@@ -643,6 +647,7 @@ alignment utilities */
 /* Main content spacing */
 .main-content {
   min-height: calc(100vh - 200px);
+  padding-top: calc(var(--space-20) + 80px); /* Account for fixed navigation */
 }
 
 /* Ensure proper spacing between nav and content */
