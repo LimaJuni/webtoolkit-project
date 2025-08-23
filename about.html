@@ -80,11 +80,107 @@
     <!-- Main Content -->
     <main id="main-content" class="main-content" role="main">
         <div class="container">
-            <header class="pt-16 pb-12 text-center">
-                <h1 class="display-hero mb-6">About Junior</h1>
-                <p class="text-lead mb-8">Learn about the instructor and this project</p>
-                <p class="text-body">About page content will be implemented in a future task.</p>
+            <!-- Hero Section -->
+            <header class="about-hero pt-16 pb-12 text-center" data-animate="fade-up">
+                <div class="instructor-avatar mb-6">
+                    <div class="avatar-circle">J</div>
+                </div>
+                <h1 class="display-hero mb-4">Junior</h1>
+                <p class="text-lead mb-6">Web Development Instructor & Modern Design Enthusiast</p>
+                <p class="hero-description text-contrast-medium">Passionate about creating beautiful, accessible web experiences with modern technologies and Figma-inspired design systems.</p>
             </header>
+            
+            <!-- About Content -->
+            <section class="about-content mb-16" data-animate="fade-up">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title mb-6">About This Project</h2>
+                        <div class="text-content">
+                            <p class="mb-4">WebToolKit Enhanced represents the evolution of modern web development, combining clean design principles with powerful functionality. This project showcases advanced techniques in responsive design, accessibility, and user experience.</p>
+                            <p class="mb-4">Built with a focus on performance and usability, every component has been carefully crafted to provide an exceptional user experience across all devices and screen sizes.</p>
+                            <p>The project demonstrates proficiency in modern web technologies while maintaining the highest standards of code quality and design consistency.</p>
+                        </div>
+                    </div>
+                    <div class="content-features">
+                        <h3 class="features-title mb-4">Key Features</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">🎨</span>
+                                <span>Figma-inspired Design System</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span>Fully Responsive Layout</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">♿</span>
+                                <span>WCAG 2.1 AA Compliant</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <span>Optimized Performance</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔧</span>
+                                <span>Modern JavaScript ES6+</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">💾</span>
+                                <span>Local Storage Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technology Stack -->
+            <section class="tech-stack mb-16" data-animate="fade-up">
+                <h2 class="section-title text-center mb-8">Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">🌐</div>
+                        <h3 class="tech-name">HTML5</h3>
+                        <p class="tech-description">Semantic markup with accessibility in mind</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎨</div>
+                        <h3 class="tech-name">CSS3</h3>
+                        <p class="tech-description">Modern styling with custom properties and grid</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <h3 class="tech-name">JavaScript</h3>
+                        <p class="tech-description">ES6+ modules with clean architecture</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📐</div>
+                        <h3 class="tech-name">Design System</h3>
+                        <p class="tech-description">Consistent tokens and component library</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section class="contact-section" data-animate="fade-up">
+                <div class="contact-card">
+                    <h2 class="contact-title mb-6">Get In Touch</h2>
+                    <p class="contact-description mb-8">Interested in modern web development or have questions about this project? Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="#" class="contact-link">
+                            <span class="contact-link-icon">📧</span>
+                            <span>Email</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="contact-link-icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="contact-link-icon">🐙</span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -120,5 +216,6 @@
 
     <!-- JavaScript -->
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/homepage.js"></script>
 </body>
 </html>

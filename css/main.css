@@ -6,6 +6,9 @@
 @import './typography.css';
 @import './homepage.css';
 @import './calculator.css';
+@import './phonebook.css';
+@import './about.css';
+@import './rank-system.css';
 
 /* Base layout and container styles */
 .container {

@@ -80,20 +80,80 @@
     <!-- Main Content -->
     <main id="main-content" class="main-content" role="main">
         <div class="container">
-        <!-- Hero Section with Instructor Branding -->
+        <!-- Hero Section with Rank Checker -->
         <header class="hero-section pt-20 pb-16 text-center">
             <div class="hero-content">
-                <div class="instructor-branding instructor-focus mb-8">
-                    <h1 class="display-hero mb-4" role="banner" aria-label="Junior - Web Development Instructor">Junior</h1>
-                    <div class="instructor-subtitle">
-                        <span class="instructor-title text-contrast-high">Web Development Instructor</span>
-                        <span class="instructor-separator">•</span>
-                        <span class="instructor-expertise text-contrast-medium">Modern Design Systems</span>
+                <!-- Initial State -->
+                <div class="rank-checker" id="rank-checker">
+                    <div class="rank-icon mb-6">⚔️</div>
+                    <h1 class="display-hero mb-4">Check Your Rank</h1>
+                    <p class="text-lead mb-6">Enter your name to discover your hunter rank</p>
+                    <div class="name-input-container">
+                        <input type="text" id="player-name" class="name-input" placeholder="Enter your name..." maxlength="20">
+                        <button id="check-rank-btn" class="rank-btn">Awaken</button>
                     </div>
                 </div>
-                <div class="hero-description">
+                
+                <!-- Player Profile (Hidden Initially) -->
+                <div class="player-profile" id="player-profile" style="display: none;">
+                    <div class="rank-badge mb-4">
+                        <span class="rank-letter" id="rank-letter">E</span>
+                        <span class="rank-text">RANK</span>
+                    </div>
+                    <h1 class="player-welcome mb-4">Welcome, <span id="player-name-display">Player</span></h1>
+                    <div class="player-stats mb-6">
+                        <div class="stat-item">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value" id="player-level">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">EXP</span>
+                            <span class="stat-value" id="player-exp">0/100</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Power</span>
+                            <span class="stat-value" id="player-power">10</span>
+                        </div>
+                    </div>
+                    <button id="show-quests-btn" class="quest-btn">View Daily Quests</button>
+                    <button id="reset-rank-btn" class="reset-btn">Reset</button>
+                </div>
+                
+                <!-- Daily Quests (Hidden Initially) -->
+                <div class="daily-quests" id="daily-quests" style="display: none;">
+                    <h2 class="quest-title mb-6">📋 Daily Quests</h2>
+                    <div class="quest-list">
+                        <div class="quest-item">
+                            <div class="quest-icon">💪</div>
+                            <div class="quest-details">
+                                <div class="quest-name">100 Push-ups</div>
+                                <div class="quest-reward">+10 EXP</div>
+                            </div>
+                            <button class="quest-complete-btn" data-quest="pushups">Complete</button>
+                        </div>
+                        <div class="quest-item">
+                            <div class="quest-icon">🏃</div>
+                            <div class="quest-details">
+                                <div class="quest-name">100m Run</div>
+                                <div class="quest-reward">+10 EXP</div>
+                            </div>
+                            <button class="quest-complete-btn" data-quest="run">Complete</button>
+                        </div>
+                        <div class="quest-item">
+                            <div class="quest-icon">🤸</div>
+                            <div class="quest-details">
+                                <div class="quest-name">100 Sit-ups</div>
+                                <div class="quest-reward">+10 EXP</div>
+                            </div>
+                            <button class="quest-complete-btn" data-quest="situps">Complete</button>
+                        </div>
+                    </div>
+                    <button id="back-to-profile-btn" class="back-btn">Back to Profile</button>
+                </div>
+                
+                <div class="hero-description mt-8">
                     <p class="text-lead text-contrast-high mb-6">WebToolKit Enhanced</p>
-                    <p class="text-body hero-tagline text-contrast-medium">Experience modern web development with Figma-inspired design, 4K-ready scaling, and professional-grade components.</p>
+                    <p class="text-body hero-tagline text-contrast-medium">Experience modern web development with Figma-inspired design and gamified interactions.</p>
                 </div>
             </div>
         </header>
@@ -259,5 +319,6 @@
     <!-- JavaScript -->
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/homepage.js"></script>
+    <script type="module" src="js/rank-system.js"></script>
 </body>
 </html>
