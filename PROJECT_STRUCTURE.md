@@ -30,8 +30,7 @@ css/
 ├── scroll-animations.css   # Scroll-triggered animations
 ├── loading-animations.css  # Loading states and animations
 ├── testimonials.css        # Testimonials section styles
-├── features-section.css    # Features grid section
-└── rank-system.css         # Legacy rank system (can be removed)
+└── features-section.css    # Features grid section
 ```
 
 ### 🔧 JavaScript Files (js/)
@@ -53,8 +52,7 @@ js/
 ├── image-storage.js        # Image storage management
 ├── performance.js          # Performance optimizations
 ├── accessibility.js        # Accessibility enhancements
-├── touch-support.js        # Touch device support
-└── rank-system.js          # Legacy rank system (can be removed)
+└── touch-support.js        # Touch device support
 ```
 
 ### 📄 HTML Pages
