@@ -1,0 +1,284 @@
+/* Cache Management Styles */
+
+/* Cache Clear Button */
+.cache-clear-btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  border: none;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: var(--space-4);
+}
+
+.cache-clear-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cache-clear-btn:active {
+  transform: translateY(0);
+}
+
+/* Cache Status Indicator */
+.cache-status-indicator {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.875rem;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cache-status-indicator:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cache-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cache-icon {
+  font-size: 1rem;
+}
+
+.cache-text {
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+/* Cache size indicators */
+.cache-status-indicator.cache-small .cache-icon {
+  color: var(--color-success);
+}
+
+.cache-status-indicator.cache-medium .cache-icon {
+  color: var(--color-warning);
+}
+
+.cache-status-indicator.cache-large .cache-icon {
+  color: var(--color-error);
+}
+
+/* Update Notification */
+.update-notification {
+  position: fixed;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: white;
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-4);
+  z-index: 1001;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: slideInRight 0.5s ease;
+  max-width: 300px;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.update-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.update-content span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.update-content button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.update-content button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.update-content button:first-of-type {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Cache Management Modal */
+.cache-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.cache-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cache-modal-content {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-8);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.cache-modal.active .cache-modal-content {
+  transform: scale(1);
+}
+
+.cache-modal h3 {
+  color: var(--color-on-surface);
+  margin-bottom: var(--space-4);
+  font-size: 1.5rem;
+}
+
+.cache-modal p {
+  color: var(--color-on-surface-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+.cache-modal-buttons {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+.cache-modal-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--border-radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cache-modal-btn.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.cache-modal-btn.secondary {
+  background: var(--color-surface-variant);
+  color: var(--color-on-surface);
+}
+
+.cache-modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cache-status-indicator {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    left: var(--space-4);
+    text-align: center;
+  }
+  
+  .update-notification {
+    top: var(--space-4);
+    right: var(--space-4);
+    left: var(--space-4);
+    max-width: none;
+  }
+  
+  .cache-modal-content {
+    padding: var(--space-6);
+    margin: var(--space-4);
+  }
+  
+  .cache-modal-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .cache-status-indicator {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .cache-modal-content {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation for cache clearing */
+.cache-clearing {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Success message after cache clear */
+.cache-success {
+  background: var(--color-success);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-4);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
