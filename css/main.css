@@ -4,27 +4,31 @@
 @import './design-tokens.css';
 @import './reset.css';
 @import './typography.css';
+
+/* Core components */
 @import './backgrounds.css';
-@import './hero-enhancements.css';
+@import './modern-enhancements.css';
+@import './dark-theme.css';
+@import './mobile.css';
+
+/* Page-specific styles */
 @import './homepage.css';
 @import './calculator.css';
 @import './phonebook.css';
 @import './about.css';
-@import './rank-system.css';
-@import './mobile.css';
-@import './dark-theme.css';
 @import './gallery.css';
-@import './modern-enhancements.css';
-@import './advanced-animations.css';
-@import './features-section.css';
-@import './navigation-enhancements.css';
-@import './scroll-animations.css';
+
+/* Modern features */
 @import './modern-hero.css';
 @import './interactive-cards.css';
-@import './mega-menu.css';
+@import './scroll-animations.css';
 @import './loading-animations.css';
 @import './testimonials.css';
-@import './gamification.css';
+@import './features-section.css';
+
+/* Legacy rank system (can be removed if not used) */
+@import './rank-system.css';
+
 
 /* Base layout and container styles */
 .container {

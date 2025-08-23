@@ -203,10 +203,7 @@ export class DesignSystem {
       themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
     }
     
-    // Dispatch theme change event for gamification
-    document.dispatchEvent(new CustomEvent('themeChanged', { 
-      detail: { theme } 
-    }));
+
   }
 }
 
