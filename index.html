@@ -98,55 +98,129 @@
             </div>
         </header>
 
-        <!-- Typography Showcase -->
-        <section class="mb-16">
-            <h2 class="mb-8">Typography System</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="mb-4">Headings</h3>
-                    <h1 class="mb-2">Heading 1</h1>
-                    <h2 class="mb-2">Heading 2</h2>
-                    <h3 class="mb-2">Heading 3</h3>
-                    <h4 class="mb-2">Heading 4</h4>
-                    <h5 class="mb-2">Heading 5</h5>
-                    <h6 class="mb-2">Heading 6</h6>
+        <!-- Image Slideshow Section -->
+        <section class="slideshow-section mb-20" data-animate="fade-up">
+            <div class="slideshow-container">
+                <div class="slideshow-wrapper">
+                    <div class="slide active" data-slide="0">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <div class="placeholder-image">🖼️</div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Modern Calculator</h3>
+                                <p>Perform calculations with our sleek, responsive calculator featuring keyboard support and history.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-slide="1">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <div class="placeholder-image">📞</div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Smart Phonebook</h3>
+                                <p>Manage your contacts with advanced search, sorting, and bulk operations in a beautiful interface.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-slide="2">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <div class="placeholder-image">🎨</div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Image Gallery</h3>
+                                <p>Upload, organize, and view your images with our modern gallery featuring drag-and-drop support.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="mb-4">Text Styles</h3>
-                    <p class="text-lead mb-2">Lead text for introductions</p>
-                    <p class="text-body mb-2">Regular body text for content</p>
-                    <p class="text-small mb-2">Small text for captions</p>
-                    <code>Code snippet example</code>
+                <div class="slideshow-controls">
+                    <button class="slide-btn prev-btn" aria-label="Previous slide">‹</button>
+                    <div class="slide-indicators">
+                        <button class="indicator active" data-slide="0" aria-label="Go to slide 1"></button>
+                        <button class="indicator" data-slide="1" aria-label="Go to slide 2"></button>
+                        <button class="indicator" data-slide="2" aria-label="Go to slide 3"></button>
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next slide">›</button>
                 </div>
             </div>
         </section>
 
-        <!-- Design System Demo -->
-        <section class="mb-16">
-            <h2 class="mb-8">Design System Elements</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="mb-3">Card Component</h3>
-                    <p class="text-body">This demonstrates the card styling with shadows and rounded corners.</p>
+        <!-- Features Grid Section -->
+        <section class="features-section mb-20" data-animate="fade-up">
+            <div class="section-header text-center mb-12">
+                <h2 class="section-title mb-4">Powerful Tools at Your Fingertips</h2>
+                <p class="section-subtitle text-contrast-medium">Experience modern web applications with professional design and seamless functionality</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-animate="slide-up" data-delay="100">
+                    <div class="feature-icon">🧮</div>
+                    <h3 class="feature-title">Advanced Calculator</h3>
+                    <p class="feature-description">Perform complex calculations with keyboard shortcuts, history tracking, and copy-to-clipboard functionality.</p>
+                    <a href="calculator.html" class="feature-link">Try Calculator →</a>
                 </div>
-                <div class="bg-primary-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="mb-3 text-primary">Primary Card</h3>
-                    <p class="text-body">Card with primary color background and semantic styling.</p>
+                <div class="feature-card" data-animate="slide-up" data-delay="200">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Smart Phonebook</h3>
+                    <p class="feature-description">Manage contacts with real-time search, bulk operations, and data export capabilities in a modern interface.</p>
+                    <a href="phonebook.html" class="feature-link">Manage Contacts →</a>
                 </div>
-                <div class="bg-neutral-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="mb-3">Neutral Card</h3>
-                    <p class="text-body">Card with neutral background for secondary content.</p>
+                <div class="feature-card" data-animate="slide-up" data-delay="300">
+                    <div class="feature-icon">🖼️</div>
+                    <h3 class="feature-title">Image Gallery</h3>
+                    <p class="feature-description">Upload, organize, and view images with drag-and-drop support and responsive gallery layouts.</p>
+                    <a href="gallery.html" class="feature-link">View Gallery →</a>
                 </div>
             </div>
         </section>
 
-        <!-- Spacing and Layout Demo -->
-        <section class="mb-16">
-            <h2 class="mb-8">Spacing System</h2>
-            <div class="bg-neutral-100 p-8 rounded-lg">
-                <div class="bg-white p-4 mb-4 rounded shadow-sm">Padding: 1rem</div>
-                <div class="bg-white p-6 mb-4 rounded shadow-sm">Padding: 1.5rem</div>
-                <div class="bg-white p-8 rounded shadow-sm">Padding: 2rem</div>
+        <!-- Interactive Demo Section -->
+        <section class="demo-section mb-20" data-animate="fade-up">
+            <div class="demo-container">
+                <div class="demo-content">
+                    <div class="demo-text">
+                        <h2 class="demo-title mb-6">Built with Modern Standards</h2>
+                        <div class="demo-features">
+                            <div class="demo-feature" data-animate="slide-right" data-delay="100">
+                                <div class="demo-feature-icon">⚡</div>
+                                <div class="demo-feature-text">
+                                    <h4>Lightning Fast</h4>
+                                    <p>Optimized performance with lazy loading and efficient caching</p>
+                                </div>
+                            </div>
+                            <div class="demo-feature" data-animate="slide-right" data-delay="200">
+                                <div class="demo-feature-icon">♿</div>
+                                <div class="demo-feature-text">
+                                    <h4>Fully Accessible</h4>
+                                    <p>WCAG 2.1 AA compliant with keyboard navigation and screen reader support</p>
+                                </div>
+                            </div>
+                            <div class="demo-feature" data-animate="slide-right" data-delay="300">
+                                <div class="demo-feature-icon">📱</div>
+                                <div class="demo-feature-text">
+                                    <h4>Mobile First</h4>
+                                    <p>Responsive design that works perfectly on all devices and screen sizes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-visual" data-animate="slide-left">
+                        <div class="demo-mockup">
+                            <div class="mockup-screen">
+                                <div class="mockup-content">
+                                    <div class="mockup-header"></div>
+                                    <div class="mockup-body">
+                                        <div class="mockup-element"></div>
+                                        <div class="mockup-element"></div>
+                                        <div class="mockup-element"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         </div>
@@ -184,5 +258,6 @@
 
     <!-- JavaScript -->
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/homepage.js"></script>
 </body>
 </html>

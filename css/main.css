@@ -4,6 +4,8 @@
 @import './design-tokens.css';
 @import './reset.css';
 @import './typography.css';
+@import './homepage.css';
+@import './calculator.css';
 
 /* Base layout and container styles */
 .container {
@@ -572,6 +574,19 @@
   .nav-link {
     padding: var(--space-4) var(--space-6);
   }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* High contrast mode support */
