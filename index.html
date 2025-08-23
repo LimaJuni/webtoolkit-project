@@ -31,6 +31,12 @@
         <span class="theme-icon">🌙</span>
     </button>
     
+    <!-- Rank System Trigger Button -->
+    <button class="rank-trigger-btn" id="rank-trigger" aria-label="Check your rank">
+        <span class="rank-trigger-icon">⚔️</span>
+        <span class="rank-trigger-text">Rank</span>
+    </button>
+    
     <!-- Main Navigation -->
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="container">
@@ -75,6 +81,12 @@
                             <a href="gallery.html" class="nav-link" role="menuitem">
                                 <span class="nav-icon">🖼️</span>
                                 <span class="nav-text">Gallery</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#" class="nav-link" role="menuitem" id="rank-check-link">
+                                <span class="nav-icon">⚔️</span>
+                                <span class="nav-text">Rank Check</span>
                             </a>
                         </li>
                         <li class="nav-item" role="none">
@@ -554,6 +566,175 @@
         </section>
         </div>
     </main>
+
+    <!-- Rank System Modal -->
+    <div class="rank-modal-overlay" id="rank-modal-overlay" aria-hidden="true">
+        <div class="rank-modal" role="dialog" aria-labelledby="rank-modal-title" aria-describedby="rank-modal-desc">
+            <button class="rank-modal-close" id="rank-modal-close" aria-label="Close rank modal">
+                <span>×</span>
+            </button>
+            
+            <!-- Initial Rank Check State -->
+            <div class="rank-check-state" id="rank-check-state">
+                <div class="rank-modal-header">
+                    <div class="rank-modal-icon">⚔️</div>
+                    <h2 id="rank-modal-title" class="rank-modal-title">Discover Your Hunter Rank</h2>
+                    <p id="rank-modal-desc" class="rank-modal-description">Enter your name to awaken your true potential and discover your hunter classification.</p>
+                </div>
+                
+                <div class="rank-input-section">
+                    <div class="rank-input-group">
+                        <input type="text" id="rank-player-name" class="rank-input" placeholder="Enter your name..." maxlength="20" autocomplete="off">
+                        <button id="rank-awaken-btn" class="rank-awaken-btn">
+                            <span class="btn-text">Awaken</span>
+                            <span class="btn-icon">✨</span>
+                        </button>
+                    </div>
+                    <div class="rank-input-hint">Your name will determine your hunter classification</div>
+                </div>
+            </div>
+            
+            <!-- Player Profile State -->
+            <div class="rank-profile-state" id="rank-profile-state" style="display: none;">
+                <div class="rank-profile-header">
+                    <div class="rank-badge-large">
+                        <div class="rank-badge-bg"></div>
+                        <div class="rank-letter" id="rank-letter">S</div>
+                        <div class="rank-label">RANK</div>
+                    </div>
+                    <div class="rank-profile-info">
+                        <h2 class="rank-welcome">Welcome, <span id="rank-display-name">Hunter</span></h2>
+                        <div class="rank-title" id="rank-title">Elite Hunter</div>
+                    </div>
+                </div>
+                
+                <div class="rank-stats-grid">
+                    <div class="rank-stat-card">
+                        <div class="rank-stat-icon">⚡</div>
+                        <div class="rank-stat-info">
+                            <div class="rank-stat-label">Level</div>
+                            <div class="rank-stat-value" id="rank-level">1</div>
+                        </div>
+                    </div>
+                    <div class="rank-stat-card">
+                        <div class="rank-stat-icon">🔥</div>
+                        <div class="rank-stat-info">
+                            <div class="rank-stat-label">Power</div>
+                            <div class="rank-stat-value" id="rank-power">1000</div>
+                        </div>
+                    </div>
+                    <div class="rank-stat-card">
+                        <div class="rank-stat-icon">⭐</div>
+                        <div class="rank-stat-info">
+                            <div class="rank-stat-label">EXP</div>
+                            <div class="rank-stat-value" id="rank-exp">0/100</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rank-abilities">
+                    <h3 class="rank-abilities-title">Special Abilities</h3>
+                    <div class="rank-abilities-list" id="rank-abilities-list">
+                        <div class="rank-ability">
+                            <div class="rank-ability-icon">🗡️</div>
+                            <div class="rank-ability-name">Blade Mastery</div>
+                        </div>
+                        <div class="rank-ability">
+                            <div class="rank-ability-icon">🛡️</div>
+                            <div class="rank-ability-name">Iron Defense</div>
+                        </div>
+                        <div class="rank-ability">
+                            <div class="rank-ability-icon">⚡</div>
+                            <div class="rank-ability-name">Lightning Strike</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rank-actions">
+                    <button id="rank-quests-btn" class="rank-action-btn primary">
+                        <span class="btn-icon">📋</span>
+                        <span class="btn-text">View Quests</span>
+                    </button>
+                    <button id="rank-reset-btn" class="rank-action-btn secondary">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Reset</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Daily Quests State -->
+            <div class="rank-quests-state" id="rank-quests-state" style="display: none;">
+                <div class="rank-quests-header">
+                    <button id="rank-back-btn" class="rank-back-btn">
+                        <span>←</span>
+                        <span>Back</span>
+                    </button>
+                    <h2 class="rank-quests-title">📋 Daily Quests</h2>
+                    <div class="rank-quests-subtitle">Complete quests to gain experience and power</div>
+                </div>
+                
+                <div class="rank-quests-list">
+                    <div class="rank-quest-card" data-quest="strength">
+                        <div class="rank-quest-icon">💪</div>
+                        <div class="rank-quest-info">
+                            <div class="rank-quest-name">Strength Training</div>
+                            <div class="rank-quest-desc">Complete 100 push-ups to build strength</div>
+                            <div class="rank-quest-reward">+15 EXP, +5 Power</div>
+                        </div>
+                        <div class="rank-quest-status">
+                            <button class="rank-quest-btn" data-quest="strength">Complete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="rank-quest-card" data-quest="speed">
+                        <div class="rank-quest-icon">🏃</div>
+                        <div class="rank-quest-info">
+                            <div class="rank-quest-name">Speed Training</div>
+                            <div class="rank-quest-desc">Run 1000 meters to increase agility</div>
+                            <div class="rank-quest-reward">+12 EXP, +3 Speed</div>
+                        </div>
+                        <div class="rank-quest-status">
+                            <button class="rank-quest-btn" data-quest="speed">Complete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="rank-quest-card" data-quest="endurance">
+                        <div class="rank-quest-icon">🤸</div>
+                        <div class="rank-quest-info">
+                            <div class="rank-quest-name">Endurance Training</div>
+                            <div class="rank-quest-desc">Complete 100 sit-ups for core strength</div>
+                            <div class="rank-quest-reward">+10 EXP, +4 Endurance</div>
+                        </div>
+                        <div class="rank-quest-status">
+                            <button class="rank-quest-btn" data-quest="endurance">Complete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="rank-quest-card" data-quest="meditation">
+                        <div class="rank-quest-icon">🧘</div>
+                        <div class="rank-quest-info">
+                            <div class="rank-quest-name">Mental Training</div>
+                            <div class="rank-quest-desc">Meditate for 10 minutes to focus your mind</div>
+                            <div class="rank-quest-reward">+8 EXP, +6 Focus</div>
+                        </div>
+                        <div class="rank-quest-status">
+                            <button class="rank-quest-btn" data-quest="meditation">Complete</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rank-quest-progress">
+                    <div class="rank-progress-info">
+                        <span class="rank-progress-label">Daily Progress</span>
+                        <span class="rank-progress-value" id="rank-daily-progress">0/4 Completed</span>
+                    </div>
+                    <div class="rank-progress-bar">
+                        <div class="rank-progress-fill" id="rank-progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="main-footer" role="contentinfo">
